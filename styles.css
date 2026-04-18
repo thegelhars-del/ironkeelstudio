@@ -416,8 +416,9 @@ p:last-child { margin-bottom: 0; }
   position: relative;
   padding: var(--space-24) 0 var(--space-16);
   background:
-    radial-gradient(ellipse at 30% 20%, rgba(79, 179, 160, 0.08), transparent 60%),
-    radial-gradient(ellipse at 70% 80%, rgba(79, 179, 160, 0.04), transparent 50%),
+    linear-gradient(180deg, rgba(10, 15, 20, 0.55) 0%, rgba(10, 15, 20, 0.82) 60%, rgba(10, 15, 20, 0.95) 100%),
+    radial-gradient(ellipse at 30% 20%, rgba(79, 179, 160, 0.12), transparent 60%),
+    url('assets/heroshotsub.jpg') center/cover no-repeat,
     linear-gradient(180deg, var(--steel-deep) 0%, #070b0f 100%);
   overflow: hidden;
 }
@@ -909,7 +910,29 @@ p:last-child { margin-bottom: 0; }
     radial-gradient(ellipse at 20% 50%, rgba(79, 179, 160, 0.06), transparent 60%),
     linear-gradient(180deg, var(--steel-deep), var(--steel));
   border-bottom: 1px solid var(--steel-border);
+  position: relative;
+  overflow: hidden;
 }
+
+/* Photo-backed page heroes — darker overlay so text stays readable */
+.page-hero--photo {
+  background:
+    linear-gradient(180deg, rgba(10, 15, 20, 0.72) 0%, rgba(10, 15, 20, 0.92) 100%),
+    radial-gradient(ellipse at 20% 50%, rgba(79, 179, 160, 0.1), transparent 60%),
+    linear-gradient(180deg, var(--steel-deep), var(--steel));
+  background-size: cover;
+  background-position: center;
+}
+.page-hero--fleet { background-image:
+    linear-gradient(180deg, rgba(10, 15, 20, 0.72) 0%, rgba(10, 15, 20, 0.92) 100%),
+    url('assets/lasubheroshot.jpg'); }
+.page-hero--about { background-image:
+    linear-gradient(180deg, rgba(10, 15, 20, 0.72) 0%, rgba(10, 15, 20, 0.92) 100%),
+    url('assets/icesub.jpg'); }
+.page-hero--log { background-image:
+    linear-gradient(180deg, rgba(10, 15, 20, 0.72) 0%, rgba(10, 15, 20, 0.92) 100%),
+    url('assets/forwardviewsub.jpg'); }
+.page-hero--photo { background-size: cover; background-position: center; background-repeat: no-repeat; min-height: 340px; display: flex; align-items: center; }
 
 /* ============================================
    FLEET PAGE PROJECT BLOCKS
