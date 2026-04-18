@@ -704,6 +704,72 @@ p:last-child { margin-bottom: 0; }
   margin-top: var(--space-6);
 }
 
+/* Optional "leave a message" disclosure inside notify forms */
+.form-extra {
+  margin: var(--space-4) auto 0;
+  max-width: 480px;
+  text-align: left;
+}
+.form-extra summary {
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--cream-muted);
+  padding: var(--space-2) 0;
+  list-style: none;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  transition: color 0.2s var(--ease);
+  user-select: none;
+}
+.form-extra summary::-webkit-details-marker,
+.form-extra summary::marker { display: none; }
+.form-extra summary::before {
+  content: '+';
+  color: var(--sonar);
+  font-size: 1rem;
+  font-weight: 500;
+  transition: transform 0.2s var(--ease);
+  display: inline-block;
+  width: 0.8em;
+}
+.form-extra[open] summary::before { content: '\2013'; }
+.form-extra summary:hover { color: var(--sonar); }
+.form-extra summary:focus-visible {
+  outline: 2px solid var(--sonar);
+  outline-offset: 2px;
+}
+.form-extra .form-optional {
+  color: var(--cream-faint);
+  font-weight: 400;
+  margin-left: var(--space-1);
+}
+.form-extra textarea {
+  width: 100%;
+  margin-top: var(--space-3);
+  background: var(--steel-deep);
+  border: 1px solid var(--steel-border);
+  color: var(--cream);
+  padding: var(--space-4);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  line-height: 1.55;
+  min-height: 110px;
+  resize: vertical;
+  transition: border-color 0.2s var(--ease);
+}
+.form-extra textarea:focus {
+  outline: none;
+  border-color: var(--sonar);
+  box-shadow: 0 0 0 1px var(--sonar);
+}
+.form-extra textarea::placeholder {
+  color: var(--cream-faint);
+}
+
 .form-success,
 .form-error {
   display: none;
