@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Iron Keel Studio</title>
+<meta name="description" content="Get in touch with Iron Keel Studio — notify-me signup and direct contact.">
+<meta property="og:title" content="Contact — Iron Keel Studio">
+<meta property="og:description" content="Join the notify-me list or reach out directly.">
+<meta property="og:url" content="https://ironkeelstudio.com/contact.html">
+<meta property="og:image" content="https://ironkeelstudio.com/assets/logo.png">
+<meta name="theme-color" content="#0a0f14">
+<link rel="icon" href="assets/logo.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="nav" aria-label="Primary">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__brand" aria-label="Iron Keel Studio home">
+      <img src="assets/logo.png" alt="Iron Keel Studio">
+      <span class="nav__brand-text">Iron Keel</span>
+    </a>
+    <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <ul class="nav__links">
+      <li><a href="index.html" class="nav__link">Home</a></li>
+      <li><a href="fleet.html" class="nav__link">The Fleet</a></li>
+      <li><a href="keel-core.html" class="nav__link">Keel Core</a></li>
+      <li><a href="build-log.html" class="nav__link">Build Log</a></li>
+      <li><a href="about.html" class="nav__link">About</a></li>
+      <li><a href="contact.html" class="nav__link active">Contact</a></li>
+      <li class="nav__cta"><a href="#notify" class="btn btn--small">Notify Me</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="container container--narrow">
+    <span class="eyebrow">Get in Touch</span>
+    <h1>Contact</h1>
+    <p class="hero__sub" style="margin-top: var(--space-4);">Two ways to reach the workshop.</p>
+  </div>
+</section>
+
+<!-- ══════════ NOTIFY ══════════ -->
+<section id="notify" class="section" style="padding-bottom: var(--space-16);">
+  <div class="container container--narrow">
+    <span class="eyebrow">01 — Notify Me</span>
+    <h2>Be first in line.</h2>
+    <p>
+      Iron Keel kits aren't shipping yet. Drop your email and we'll let you know when they are. No spam. No marketing. Just a heads-up when something's ready.
+    </p>
+
+    <form data-notify action="https://formspree.io/f/FORMSPREE_ENDPOINT_PLACEHOLDER" method="POST" style="margin-top: var(--space-8);">
+      <div class="form-row" style="margin-top: 0;">
+        <input type="email" name="email" placeholder="you@example.com" required aria-label="Email address">
+        <button type="submit" class="btn btn--primary">Notify Me</button>
+      </div>
+      <div class="form-success" role="status"></div>
+      <div class="form-error" role="alert"></div>
+    </form>
+    <p class="form-note" style="text-align: left;">No spam. Ever.</p>
+  </div>
+</section>
+
+<!-- ══════════ DIRECT CONTACT ══════════ -->
+<section class="section section--raised">
+  <div class="container container--narrow">
+    <span class="eyebrow">02 — Direct Contact</span>
+    <h2>Reach the workshop.</h2>
+    <p>
+      For project inquiries, commission questions, custom hull numbers, wardroom builds, or anything else&nbsp;—
+    </p>
+
+    <div style="margin-top: var(--space-8); padding: var(--space-8); background: var(--steel-raised); border: 1px solid var(--steel-border); border-left: 3px solid var(--sonar);">
+      <p class="mono" style="color: var(--cream-faint); letter-spacing: 0.2em; text-transform: uppercase; font-size: 0.75rem; margin-bottom: var(--space-3);">Email</p>
+      <p style="font-size: 1.25rem; font-family: var(--font-mono); color: var(--cream-bright); margin: 0;">
+        <a href="mailto:pedro@ironkeelstudio.com">pedro@ironkeelstudio.com</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ FOLLOW ══════════ -->
+<section class="section">
+  <div class="container container--narrow">
+    <span class="eyebrow">03 — Follow Along</span>
+    <h2>Watch the build.</h2>
+    <p>
+      Every update, every test print, every lesson learned lives on r/Military3DPrinting. The best place to see what's actually happening in the workshop.
+    </p>
+    <div style="margin-top: var(--space-8);">
+      <a href="https://www.reddit.com/r/Military3DPrinting/" target="_blank" rel="noopener" class="btn">Visit r/Military3DPrinting &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <a href="index.html" class="footer__brand">
+        <img src="assets/logo.png" alt="Iron Keel Studio">
+        <span class="footer__brand-text">Iron Keel Studio</span>
+      </a>
+      <p class="footer__copy">&copy; 2026 Iron Keel Studio</p>
+      <div class="footer__links">
+        <a href="mailto:pedro@ironkeelstudio.com">Email</a>
+        <a href="https://www.reddit.com/r/Military3DPrinting/" target="_blank" rel="noopener">Subreddit</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

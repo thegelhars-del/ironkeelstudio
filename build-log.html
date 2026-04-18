@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Build Log — Iron Keel Studio</title>
+<meta name="description" content="Notes from the Iron Keel workshop — follow the build on r/Military3DPrinting.">
+<meta property="og:title" content="Build Log — Iron Keel Studio">
+<meta property="og:description" content="Notes from the workshop — test prints, paint, problems, and fixes.">
+<meta property="og:url" content="https://ironkeelstudio.com/build-log.html">
+<meta property="og:image" content="https://ironkeelstudio.com/assets/logo.png">
+<meta name="theme-color" content="#0a0f14">
+<link rel="icon" href="assets/logo.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="nav" aria-label="Primary">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__brand" aria-label="Iron Keel Studio home">
+      <img src="assets/logo.png" alt="Iron Keel Studio">
+      <span class="nav__brand-text">Iron Keel</span>
+    </a>
+    <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <ul class="nav__links">
+      <li><a href="index.html" class="nav__link">Home</a></li>
+      <li><a href="fleet.html" class="nav__link">The Fleet</a></li>
+      <li><a href="keel-core.html" class="nav__link">Keel Core</a></li>
+      <li><a href="build-log.html" class="nav__link active">Build Log</a></li>
+      <li><a href="about.html" class="nav__link">About</a></li>
+      <li><a href="contact.html" class="nav__link">Contact</a></li>
+      <li class="nav__cta"><a href="contact.html" class="btn btn--small">Notify Me</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="container container--narrow">
+    <span class="eyebrow">Follow Along</span>
+    <h1>Build Log</h1>
+    <p class="hero__sub" style="margin-top: var(--space-4);">Notes from the workshop.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container container--narrow">
+    <p class="lede">
+      The long-form story of every project&nbsp;— test prints, paint jobs, problems, fixes, and the occasional cursing at the printer&nbsp;— lives on r/Military3DPrinting. It's the most active place to follow what's happening in the workshop.
+    </p>
+    <p>
+      New projects get posted there first. Mistakes, re-prints, breakthroughs, and decisions about the next boat all show up in the feed before they show up here.
+    </p>
+
+    <div style="margin-top: var(--space-12); text-align: center;">
+      <a href="https://www.reddit.com/r/Military3DPrinting/" target="_blank" rel="noopener" class="btn btn--primary">Visit r/Military3DPrinting &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<section class="section section--raised">
+  <div class="container container--narrow">
+    <span class="eyebrow">What You'll Find</span>
+    <h2>Every project,<br>every problem.</h2>
+
+    <div class="notes" style="margin-top: var(--space-8);">
+      <ul>
+        <li>Print-in-progress photos and timelapses.</li>
+        <li>Paint process and masking technique.</li>
+        <li>PVC measurement and coupler calibration notes.</li>
+        <li>Hull number and commemorative build reveals.</li>
+        <li>Test fits, failed fits, and how the fits got fixed.</li>
+        <li>Size comparisons across the 3&quot;, 4&quot;, and 6&quot; systems.</li>
+      </ul>
+    </div>
+
+    <div style="margin-top: var(--space-12); text-align: center;">
+      <a href="https://www.reddit.com/r/Military3DPrinting/" target="_blank" rel="noopener" class="btn-link">Open the subreddit &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<section id="notify" class="capture">
+  <div class="container container--narrow">
+    <div class="capture__inner">
+      <span class="eyebrow" style="justify-content: center;">Notify Me</span>
+      <h2>Be first in line.</h2>
+      <p>Iron Keel kits aren't shipping yet. Drop your email and we'll let you know when they are.</p>
+      <form data-notify action="https://formspree.io/f/FORMSPREE_ENDPOINT_PLACEHOLDER" method="POST">
+        <div class="form-row">
+          <input type="email" name="email" placeholder="you@example.com" required aria-label="Email address">
+          <button type="submit" class="btn btn--primary">Notify Me</button>
+        </div>
+        <div class="form-success" role="status"></div>
+        <div class="form-error" role="alert"></div>
+      </form>
+      <p class="form-note">No spam. Ever.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <a href="index.html" class="footer__brand">
+        <img src="assets/logo.png" alt="Iron Keel Studio">
+        <span class="footer__brand-text">Iron Keel Studio</span>
+      </a>
+      <p class="footer__copy">&copy; 2026 Iron Keel Studio</p>
+      <div class="footer__links">
+        <a href="mailto:pedro@ironkeelstudio.com">Email</a>
+        <a href="https://www.reddit.com/r/Military3DPrinting/" target="_blank" rel="noopener">Subreddit</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

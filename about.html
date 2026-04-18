@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Iron Keel Studio</title>
+<meta name="description" content="The story behind Iron Keel Studio — a workshop developing display-scale submarine kits.">
+<meta property="og:title" content="About Iron Keel Studio">
+<meta property="og:description" content="A workshop, a subject, and a drive to get the details right.">
+<meta property="og:url" content="https://ironkeelstudio.com/about.html">
+<meta property="og:image" content="https://ironkeelstudio.com/assets/logo.png">
+<meta name="theme-color" content="#0a0f14">
+<link rel="icon" href="assets/logo.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="nav" aria-label="Primary">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__brand" aria-label="Iron Keel Studio home">
+      <img src="assets/logo.png" alt="Iron Keel Studio">
+      <span class="nav__brand-text">Iron Keel</span>
+    </a>
+    <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <ul class="nav__links">
+      <li><a href="index.html" class="nav__link">Home</a></li>
+      <li><a href="fleet.html" class="nav__link">The Fleet</a></li>
+      <li><a href="keel-core.html" class="nav__link">Keel Core</a></li>
+      <li><a href="build-log.html" class="nav__link">Build Log</a></li>
+      <li><a href="about.html" class="nav__link active">About</a></li>
+      <li><a href="contact.html" class="nav__link">Contact</a></li>
+      <li class="nav__cta"><a href="contact.html" class="btn btn--small">Notify Me</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="container container--narrow">
+    <span class="eyebrow">The Workshop</span>
+    <h1>About<br>Iron Keel Studio</h1>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container container--narrow">
+    <p class="lede">
+      Iron Keel Studio began where a lot of projects begin: with one person, one workshop, and a subject they couldn't stop thinking about.
+    </p>
+
+    <p>
+      The project started as an attempt to build one accurate display-scale model of a Virginia-class submarine. It turned into something larger&nbsp;— a drive to get the details right, to engineer a way to build at real display scale, and to share that work with others who have a connection to these boats.
+    </p>
+
+    <div class="rule-dashed"></div>
+
+    <p>
+      Iron Keel is built on a close personal tie to the silent service and a respect for the people who crew these submarines. The work tries to honor that.
+    </p>
+
+    <p>
+      Today, Iron Keel is developing a growing fleet of submarine kits&nbsp;— Virginia-class, Columbia-class, and custom commemorative variants&nbsp;— built around the Keel Core hybrid construction system. None of them are shipping yet. But they're getting closer.
+    </p>
+  </div>
+</section>
+
+<section class="section section--raised">
+  <div class="container container--narrow">
+    <span class="eyebrow">The Approach</span>
+    <h2>One workshop.<br>No shortcuts.</h2>
+
+    <div class="notes" style="margin-top: var(--space-8);">
+      <ul>
+        <li>Every hull design is measured, tested, and rebuilt until it fits.</li>
+        <li>Every kit is engineered so a first-time builder can finish it.</li>
+        <li>Every print, every paint, every problem goes in the build log.</li>
+        <li>No fake urgency. No countdowns. It's ready when it's ready.</li>
+        <li>The work respects the subject and the people who served on these boats.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container container--narrow" style="text-align: center;">
+    <span class="eyebrow" style="justify-content: center;">Next</span>
+    <h2>See the fleet.</h2>
+    <div style="margin-top: var(--space-8); display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap;">
+      <a href="fleet.html" class="btn btn--primary">The Fleet &rarr;</a>
+      <a href="keel-core.html" class="btn">How Keel Core works &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<section id="notify" class="capture">
+  <div class="container container--narrow">
+    <div class="capture__inner">
+      <span class="eyebrow" style="justify-content: center;">Notify Me</span>
+      <h2>Be first in line.</h2>
+      <p>Iron Keel kits aren't shipping yet. Drop your email and we'll let you know when they are.</p>
+      <form data-notify action="https://formspree.io/f/FORMSPREE_ENDPOINT_PLACEHOLDER" method="POST">
+        <div class="form-row">
+          <input type="email" name="email" placeholder="you@example.com" required aria-label="Email address">
+          <button type="submit" class="btn btn--primary">Notify Me</button>
+        </div>
+        <div class="form-success" role="status"></div>
+        <div class="form-error" role="alert"></div>
+      </form>
+      <p class="form-note">No spam. Ever.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <a href="index.html" class="footer__brand">
+        <img src="assets/logo.png" alt="Iron Keel Studio">
+        <span class="footer__brand-text">Iron Keel Studio</span>
+      </a>
+      <p class="footer__copy">&copy; 2026 Iron Keel Studio</p>
+      <div class="footer__links">
+        <a href="mailto:pedro@ironkeelstudio.com">Email</a>
+        <a href="https://www.reddit.com/r/Military3DPrinting/" target="_blank" rel="noopener">Subreddit</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
