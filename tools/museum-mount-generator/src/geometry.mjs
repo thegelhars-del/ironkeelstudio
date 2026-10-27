@@ -1,16 +1,18 @@
-export const DEFAULTS = Object.freeze({diameter:136,width:25,root:14,tip:7,standOff:0,backHeight:95,tipAngle:35,padThickness:2,padRecess:1,allowance:.5});
+export const DEFAULTS = Object.freeze({style:'printed',diameter:136,width:25,root:14,tip:7,standOff:0,backHeight:95,tipAngle:35,padThickness:2,padRecess:1,allowance:.5});
 export const LIMITS = {diameter:[60,240],width:[25,45],root:[12,24],tip:[6,12],standOff:[0,30],backHeight:[90,120],tipAngle:[20,50],padThickness:[1,4],padRecess:[.5,2],allowance:[.2,1.2]};
 const rad=d=>d*Math.PI/180;
 export function parameters(input={}) {
   const p={...DEFAULTS,...input};
+  if(!['printed','sculpted'].includes(p.style))throw Error('Unknown cradle style.');
   for(const [k,[lo,hi]] of Object.entries(LIMITS)) if(!Number.isFinite(p[k])||p[k]<lo||p[k]>hi) throw Error(`${k} must be between ${lo} and ${hi} mm${k==='tipAngle'?' (angle in degrees)':''}.`);
   if(p.padRecess>=p.padThickness) throw Error('Padding must be thicker than its recess.');
   if(p.tip>p.root) throw Error('Tip thickness must not exceed root thickness.');
   const R=p.diameter/2+p.allowance+p.padThickness-p.padRecess, root=p.root+p.standOff;
   const shift=((R+root)**2-(R+p.tip)**2)/(2*(R+root+(R+p.tip)*Math.cos(rad(p.tipAngle))));
   const C=9.92+root+R, Ro=R+root-shift, Co=C-shift;
-  const padWidth=Math.min(18,p.width-4-2*p.padRecess-.4);
-  return {...p,R,C,Ro,Co,rootSection:root,padWidth,edgeRadius:2};
+  const edgeRadius=p.style==='sculpted'?Math.min(3,p.tip*.45):2;
+  const padWidth=Math.min(18,p.width-2*edgeRadius-2*p.padRecess-.4);
+  return {...p,R,C,Ro,Co,rootSection:root,padWidth,edgeRadius};
 }
 const signedArea=poly=>poly.reduce((a,p,i)=>{const q=poly[(i+1)%poly.length];return a+p[0]*q[1]-q[0]*p[1]},0)/2;
 function ccw(poly){return signedArea(poly)<0?[...poly].reverse():poly;}
@@ -38,6 +40,7 @@ export function buildMount(module,input={}){
     for(let i=n;i>=0;i--){const t=rad(start+sweep*i/n);a.push([p.C+r2*Math.cos(t),r2*Math.sin(t)])}return ccw(a);
   }
   function output(solid,name){
+    if(p.style==='sculpted')solid=keep(solid.simplify(.001));
     if(solid.status()!=='NoError'||solid.volume()<=0)throw Error(`Could not create a closed ${name}. Try less extreme dimensions.`);
     const mesh=solid.getMesh(),positions=new Float32Array(mesh.numVert*3||mesh.vertProperties.length/mesh.numProp*3);
     for(let i=0;i<positions.length/3;i++)for(let j=0;j<3;j++)positions[i*3+j]=mesh.vertProperties[i*mesh.numProp+j];
@@ -48,11 +51,12 @@ export function buildMount(module,input={}){
     let poly=[[9.92,p.backHeight],[9.92+p.rootSection,p.backHeight]];
     for(let i=0;i<=240;i++){const t=Math.PI+(end-Math.PI)*i/240;poly.push([p.C+p.R*Math.cos(t),p.R*Math.sin(t)])}
     for(let i=240;i>=0;i--){const t=Math.PI+(outerEnd-Math.PI)*i/240;poly.push([p.Co+p.Ro*Math.cos(t),p.Ro*Math.sin(t)])}
-    const raw=cross(poly),inset=keep(raw.offset(-2,'Round',2,48)),outline=keep(inset.offset(2,'Round',2,48));
+    const corner=p.style==='sculpted'?Math.min(p.tip*.47,p.root*.35):2;
+    const raw=cross(poly),inset=keep(raw.offset(-corner,'Round',2,64)),outline=keep(inset.offset(corner,'Round',2,64));
     const count=1000;
     const outlineAt=d=>sampleLoop((d?keep(outline.offset(-d,'Round',2,48)):outline).toPolygons()[0],count);
-    const layers=[{z:0,points:outlineAt(.6)},{z:.6,points:outlineAt(0)},{z:p.width-2,points:outlineAt(0)}];
-    for(let i=1;i<=12;i++){const t=i*Math.PI/24;layers.push({z:p.width-2+2*Math.sin(t),points:outlineAt(2*(1-Math.cos(t)))});}
+    const layers=[{z:0,points:outlineAt(.6)},{z:.6,points:outlineAt(0)},{z:p.width-p.edgeRadius,points:outlineAt(0)}];
+    for(let i=1;i<=12;i++){const t=i*Math.PI/24;layers.push({z:p.width-p.edgeRadius+p.edgeRadius*Math.sin(t),points:outlineAt(p.edgeRadius*(1-Math.cos(t)))});}
     let body=loft(layers);
     // Standard interface, independent of hull size. Profile local Y becomes -Z after rotation.
     const tongue=cross([[4.04,-11.45],[9.92,-8.07],[10.52,-8.07],[10.52,8.07],[9.92,8.07],[4.04,11.45]]);

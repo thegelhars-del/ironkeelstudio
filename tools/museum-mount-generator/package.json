@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host 127.0.0.1",
-    "build": "vite build --base=/mount-generator/ --outDir=../../mount-generator"
+    "build": "vite build --base=/mount-generator/ --outDir=../../mount-generator",
+    "test": "node --test tests/*.test.mjs"
   },
   "dependencies": {
     "manifold-3d": "^3.3.2",
